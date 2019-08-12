@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Tile from "../tile/tile";
+import Map from "../Map";
 
 function App() {
-  return <Tile />;
+  //useState returns an array with two indexes, first one is the current value of the state and the second one is a callback function to update that value.
+  //Destructures the returned array and sets the first value to the tilemap varibale
+  const [tileMap] = useState([[0, 1, 0], [0, 1, 0], [0, 1, 1]]);
+  return <Map tileMap={tileMap} />;
 }
 
 export default App;

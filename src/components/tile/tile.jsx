@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import Dungeon_Tileset from ".../assets/images/Dungeon_Tileset.png";
 
 class Tile extends Component {
   constructor(props) {
