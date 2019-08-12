@@ -1,17 +1,33 @@
 import React, { Component } from "react";
+// import Dungeon_Tileset from ".../assets/images/Dungeon_Tileset.png";
 
 class Tile extends Component {
   constructor(props) {
     super(props);
+  }
 
-    this.state = {
-      width: 70,
-      x: props.x,
-      y: props.y
-    };
-    render(){
-      return 
-    }
+  componentDidMount() {
+    this.updateCanvas();
+  }
+  updateCanvas() {
+    let { tsize, tile, c, r } = this.props;
+    const ctx = this.refs.canvas.getContext("2d");
+    ctx.fillRect(0, 0, 100, 100);
+    // ctx.drawImage(
+    //   Dungeon_Tileset, // image
+    //   (tile - 1) * tsize, // source x
+    //   0, // source y
+    //   tsize, // source width
+    //   tsize, // source height
+    //   c * tsize, // target x
+    //   r * tsize, // target y
+    //   tsize, // target width
+    //   tsize
+    // );
+  }
+
+  render() {
+    return <canvas ref="canvas" width={300} height={300} />;
   }
 }
 

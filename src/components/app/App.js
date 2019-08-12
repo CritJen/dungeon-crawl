@@ -1,9 +1,9 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import Tile from "../tile/tile";
 
 function App() {
-  return <div className="App" />;
+  return <Tile />;
 }
 
 export default App;
