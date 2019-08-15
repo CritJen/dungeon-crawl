@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const MapRoom = ({ width, height, x, y }) => {
+const MapRoom = ({ width, height, x, y, clickEvent }) => {
   return (
     <div
       style={{
@@ -11,6 +11,7 @@ const MapRoom = ({ width, height, x, y }) => {
         gridColumn: x,
         gridRow: y
       }}
+      onClick={clickEvent}
     />
   );
 };
