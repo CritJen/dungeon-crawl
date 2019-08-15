@@ -1,7 +1,7 @@
 import React from "react";
 import MapRoom from "./MapRoom";
 
-const Map = ({ tileMap }) => {
+const Map = ({ tileMap, clickEvent }) => {
   const dimension = tileMap.length * 64;
   return (
     <div
@@ -21,6 +21,7 @@ const Map = ({ tileMap }) => {
               height={dimension}
               x={columnIndex + 1}
               y={rowIndex + 1}
+              clickEvent={clickEvent}
             />
           ) : (
             <div
