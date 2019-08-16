@@ -1,18 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const MapRoom = ({ width, height, x, y, clickEvent }) => {
   return (
-    <div
-      style={{
-        backgroundColor: "purple",
-        width,
-        height,
-        gridColumn: x,
-        gridRow: y
-      }}
-      onClick={clickEvent}
-    />
+    <Link to="/room">
+      <div
+        style={{
+          backgroundColor: "purple",
+          width,
+          height,
+          gridColumn: x,
+          gridRow: y
+        }}
+        onClick={clickEvent}
+      />
+    </Link>
   );
 };
 
