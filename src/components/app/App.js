@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
-import Tile from "../tile/tile";
 import Map from "../Map";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Room from "../Room";
 
 function App() {
   //useState returns an array with two indexes, first one is the current value of the state and the second one is a callback function to update that value.
@@ -10,7 +11,19 @@ function App() {
   const clickEvent = () => {
     console.log("Hi!");
   };
-  return <Map tileMap={tileMap} clickEvent={clickEvent} />;
+  return (
+    <Router>
+      <div>
+        <Route
+          exact
+          path="/"
+          render={routerProps => <Map {...routerProps} tileMap={tileMap} />}
+        />
+        <Route exact path="/room" component={Room} />
+        {/* <Map tileMap={tileMap} clickEvent={clickEvent} /> */}
+      </div>
+    </Router>
+  );
 }
 
 export default App;
